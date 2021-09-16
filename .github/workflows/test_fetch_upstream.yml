@@ -18,14 +18,6 @@ jobs:
           cd ${{ github.workspace }}
           ls -lh
           cat *
-
-          #      - name: Merge Upstream
-          #uses: exions/merge-upstream@v1
-          #with:
-          #upstream: ${{ github.event.inputs.upstream }}
-          #upstream-branch: ${{ github.event.inputs.upstream-branch }}
-          #branch: ${{ github.event.inputs.branch }}
-          #token: ${{ secrets.TOKEN }}
           
       - name: cat files after fetch upstream
         run: |
