@@ -21,10 +21,10 @@ jobs:
       - name: Merge Upstream
         uses: exions/merge-upstream@v1
         with:
-          upstream: ${{ github.event.inputs.upstream }}
-          upstream-branch: ${{ github.event.inputs.upstream-branch }}
-          branch: ${{ github.event.inputs.branch }}
-          token: ${{ secrets.TOKEN }}
+          upstream: bbear2/upstream_merge_test
+          upstream-branch: master
+          branch: master
+          #token: ${{ secrets.TOKEN }}
           
       - name: cat files after fetch upstream
         run: |
