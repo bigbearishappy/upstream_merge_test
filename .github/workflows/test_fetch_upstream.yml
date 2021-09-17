@@ -18,13 +18,22 @@ jobs:
           ls -lh
           cat *
 
-      - name: Merge Upstream
-        uses: exions/merge-upstream@v1
-        with:
-          upstream: bbear2/upstream_merge_test
-          upstream-branch: master
-          branch: master
+          #- name: Merge Upstream
+          #uses: exions/merge-upstream@v1
+          #with:
+          #upstream: bbear2/upstream_merge_test
+          #upstream-branch: master
+          #branch: master
           #token: ${{ secrets.TOKEN }}
+      - name: Sync upstream changes
+        id: sync
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3.0
+        with:
+          target_sync_branch: master
+          target_repo_token: ${{ secrets.GITHUB_TOKEN }}
+          upstream_sync_branch: master
+          upstream_sync_repo: bbear2/upstream_merge_test
+          upstream_repo_access_token: ${{ secrets.UPSTREAM_REPO_SECRET }}
           
       - name: cat files after fetch upstream
         run: |
