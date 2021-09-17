@@ -18,12 +18,12 @@ jobs:
           ls -lh
           cat *
 
-      - name: Merge Upstream
-        uses: exions/merge-upstream@v1
-        with:
-          upstream: bbear2/upstream_merge_test
-          upstream-branch: master
-          branch: master
+          #- name: Merge Upstream
+          #uses: exions/merge-upstream@v1
+          #with:
+          #upstream: bbear2/upstream_merge_test
+          #upstream-branch: master
+          #branch: master
           #token: ${{ secrets.TOKEN }}
           
       - name: cat files after fetch upstream
